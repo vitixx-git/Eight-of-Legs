@@ -1,0 +1,27 @@
+wait:3000
+eval:(()=>{localStorage.clear();const g=window.__game;window.__flow=[];let last=null,since=performance.now(),lastF5=0;const kd=(code)=>{window.dispatchEvent(new KeyboardEvent('keydown',{code,key:code,bubbles:true}));setTimeout(()=>window.dispatchEvent(new KeyboardEvent('keyup',{code,key:code,bubbles:true})),180);};window.__kd=kd;const tick=()=>{const id=g.scenes.currentId;const now=performance.now();if(id!==last){window.__flow.push([id,Math.round(now/1000)]);last=id;since=now;}if(window.__flowStop)return;const card=document.querySelector('.card, .series-card');if(id==='MENU'){if(window.__flow.length>3){window.__flowStop=true;return;}}else if(now-since>4500&&now-lastF5>4000){kd('F5');lastF5=now;}setTimeout(tick,500);};tick();return 'driver on'})()
+wait:1500
+eval:(()=>{window.__kd('KeyQ');return 'any key'})()
+wait:1500
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Играть/.test(x.textContent));p&&p.click();return b.map(x=>x.textContent).join('|')})()
+wait:1200
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Новая игра/.test(x.textContent));p&&p.click();return b.map(x=>x.textContent).join('|')})()
+wait:1000
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/^Да$/.test(x.textContent.trim()));p&&p.click();return 'confirm '+!!p+' '+window.__game.scenes.currentId})()
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify(window.__flow)
+wait:25000
+eval:JSON.stringify({flow:window.__flow,save:localStorage.getItem('vosem_lap_save_v1')})
+log

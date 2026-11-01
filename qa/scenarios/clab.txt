@@ -1,0 +1,20 @@
+wait:4500
+eval:(()=>{const s=__game.scenes.current; return s.debugInfo()+' calls '+__game.renderer.info.render.calls+' tris '+__game.renderer.info.render.triangles})()
+eval:(()=>{__game.scenes.current.debugSeek(1.2);return __game.scenes.current.debugInfo()})()
+wait:300
+shot:/data/work/shots/cl_0.png
+eval:(()=>{__game.scenes.current.debugSeek(2.5);return __game.scenes.current.debugInfo()})()
+wait:300
+shot:/data/work/shots/cl_1.png
+eval:(()=>{__game.scenes.current.debugSeek(3.6);return __game.scenes.current.debugInfo()+' calls '+__game.renderer.info.render.calls})()
+wait:300
+shot:/data/work/shots/cl_2.png
+eval:(()=>{__game.scenes.current.debugSeek(5.6);return __game.scenes.current.debugInfo()+' calls '+__game.renderer.info.render.calls+' tris '+__game.renderer.info.render.triangles})()
+wait:300
+shot:/data/work/shots/cl_3.png
+eval:(()=>{__game.scenes.current.debugSeek(7.6);return __game.scenes.current.debugInfo()})()
+wait:300
+shot:/data/work/shots/cl_4.png
+eval:(()=>{__game.scenes.current.debugSeek(9.1);return __game.scenes.current.debugInfo()+' calls '+__game.renderer.info.render.calls})()
+wait:300
+shot:/data/work/shots/cl_5.png

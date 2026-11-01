@@ -1,0 +1,9 @@
+wait:2500
+press:Backquote
+eval:(()=>{const s=window.__game.scenes.current._state; const c=s.tr.cars.find(c=>c.lane===2&&c.x<300&&c.x>-100)||s.tr.cars.find(c=>c.lane===2); s.hum.x=Math.max(30,c.x+c.len/2+30); s.hum.y=c.y; return [c.x,c.v,s.st.timer.toFixed(1)]})()
+wait:400
+shot:/data/work/shots/road3.png
+eval:(()=>{const s=window.__game.scenes.current._state; return [s.st.hits, s.st.timer.toFixed(1), s.hum.safe, s.hum.y.toFixed(0), s.hum.stun.toFixed(2), s.hum.inv.toFixed(2)]})()
+wait:1200
+eval:(()=>{const s=window.__game.scenes.current._state; return [s.hum.y.toFixed(0), !!s.hum.anim, s.hum.inv.toFixed(2)]})()
+shot:/data/work/shots/road4.png

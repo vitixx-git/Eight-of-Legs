@@ -1,0 +1,13 @@
+wait:3000
+eval:(()=>{const g=window.__game;localStorage.removeItem('vosem_lap_save_v1');g.save.load&&g.save.load();g.save.ensure();g.save.setFlag('poisonDestroyed',true);g.save.write();return 'before: completed='+g.save.data.completed+' scene='+g.scenes.currentId})()
+eval:(()=>{window.__game.scenes.goto('CREDITS');return 'goto CREDITS'})()
+wait:2500
+eval:(()=>{const g=window.__game;const ls=JSON.parse(localStorage.getItem('vosem_lap_save_v1')||'{}');return 'TC45 scene='+g.scenes.currentId+' data.completed='+g.save.data.completed+' ls.completed='+ls.completed})()
+eval:(()=>{window.__game.scenes.goto('MENU');return 'goto MENU'})()
+wait:2500
+eval:(()=>{return 'menu text: '+document.body.innerText.replace(/\s+/g,' ').slice(0,300)})()
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Играть/.test(x.textContent));p&&p.click();return 'play clicked '+!!p})()
+wait:1200
+eval:(()=>{return 'after play: '+document.body.innerText.replace(/\s+/g,' ').slice(0,400)})()
+shot:/data/work/shots/tc45_done.png
+log

@@ -1,0 +1,255 @@
+{
+  "checks": [
+    {
+      "name": "18 типов приборов присутствуют",
+      "ok": true
+    },
+    {
+      "name": "Все приборы загружены из GLB",
+      "ok": false
+    },
+    {
+      "name": "Не более 10 пакетов пультов",
+      "ok": true
+    },
+    {
+      "name": "Пульты ≤ 12 000 треугольников (10646)",
+      "ok": true
+    },
+    {
+      "name": "Сцена ≤ 75 000 треугольников (41350)",
+      "ok": true
+    },
+    {
+      "name": "Центр арены проецируется в (480,300)",
+      "ok": true
+    },
+    {
+      "name": "Таблички контрастные, без зависимости от света",
+      "ok": true
+    },
+    {
+      "name": "Таблички пультов расширены",
+      "ok": true
+    },
+    {
+      "name": "После янтарного перехода основной свет ярче минимум в 1,8 раза",
+      "ok": true
+    },
+    {
+      "name": "На 12 с пробуждение и открытые глаза",
+      "ok": true
+    },
+    {
+      "name": "На 16,5 с янтарь",
+      "ok": true
+    },
+    {
+      "name": "Нулевой шаг не двигает логическое время",
+      "ok": true
+    },
+    {
+      "name": "WebGL активен",
+      "ok": true
+    },
+    {
+      "name": "Официальные модули загрузчика доступны локально",
+      "ok": true
+    },
+    {
+      "name": "Нормализация тестового объекта: высота 6 см / центр XZ / низ 0",
+      "ok": true
+    },
+    {
+      "name": "Красный → жёлтый → зелёный",
+      "ok": true
+    },
+    {
+      "name": "Раскрытие глаз 10,9–11,5 с",
+      "ok": true
+    },
+    {
+      "name": "Ящик закрывается за 0,2 с у паука",
+      "ok": true
+    },
+    {
+      "name": "Кэш REFLEX",
+      "ok": true
+    },
+    {
+      "name": "Кэш FEAR",
+      "ok": true
+    },
+    {
+      "name": "Кэш WILL",
+      "ok": true
+    },
+    {
+      "name": "Кэш COCKPIT",
+      "ok": true
+    },
+    {
+      "name": "Запекание восстанавливает сцену без повторного звука",
+      "ok": true
+    }
+  ],
+  "traffic": [
+    {
+      "time": 0,
+      "lights": [
+        {
+          "name": "Red",
+          "intensity": 1.2
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 0
+        },
+        {
+          "name": "Red",
+          "intensity": 1.2
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 0
+        }
+      ],
+      "open": 0
+    },
+    {
+      "time": 6,
+      "lights": [
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 1.2
+        },
+        {
+          "name": "Green",
+          "intensity": 0
+        },
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 1.2
+        },
+        {
+          "name": "Green",
+          "intensity": 0
+        }
+      ],
+      "open": 0
+    },
+    {
+      "time": 12,
+      "lights": [
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 1.2
+        },
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 1.2
+        }
+      ],
+      "open": 1
+    },
+    {
+      "time": 16.5,
+      "lights": [
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 1.2
+        },
+        {
+          "name": "Red",
+          "intensity": 0
+        },
+        {
+          "name": "Yellow",
+          "intensity": 0
+        },
+        {
+          "name": "Green",
+          "intensity": 1.2
+        }
+      ],
+      "open": 1
+    }
+  ],
+  "triangles": 41350,
+  "panelTriangles": 10646,
+  "panelCalls": 10,
+  "manifestError": "Набор brain_kit не предоставлен. Используется явно обозначенный процедурный вариант.",
+  "issues": [],
+  "baked": [
+    {
+      "variant": "REFLEX",
+      "ms": 1382.5999999999767,
+      "width": 960,
+      "height": 540,
+      "draft": true
+    },
+    {
+      "variant": "FEAR",
+      "ms": 292.60000000009313,
+      "width": 960,
+      "height": 540,
+      "draft": true
+    },
+    {
+      "variant": "WILL",
+      "ms": 216.59999999997672,
+      "width": 960,
+      "height": 540,
+      "draft": true
+    },
+    {
+      "variant": "COCKPIT",
+      "ms": 175.09999999997672,
+      "width": 352,
+      "height": 220,
+      "draft": true
+    }
+  ],
+  "messages": [],
+  "fps": 1.8751171948246759
+}

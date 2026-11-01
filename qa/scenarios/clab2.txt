@@ -1,0 +1,5 @@
+wait:4500
+eval:(()=>{const g=__game,s=g.scenes.current;s.debugSeek(5.6);g.renderer.beginFrame();s.render();return s.debugInfo()+' calls '+g.renderer.info.render.calls+' tris '+g.renderer.info.render.triangles})()
+wait:300
+shot:/data/work/shots/cl_6.png
+eval:(()=>{const g=__game,s=g.scenes.current;s.debugSeek(8.0);g.renderer.beginFrame();s.render();return s.debugInfo()+' calls '+g.renderer.info.render.calls+' tris '+g.renderer.info.render.triangles})()

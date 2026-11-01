@@ -1,0 +1,192 @@
+{
+  "pendingAssets": true,
+  "models": [
+    {
+      "id": "spider_specimen",
+      "file": "models/spider_specimen.glb",
+      "role": "spider_specimen",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetLengthCm": 4
+    },
+    {
+      "id": "hazard_floor_sign",
+      "file": "models/hazard_floor_sign.glb",
+      "role": "hazard_floor_sign",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 70
+    },
+    {
+      "id": "chair_office",
+      "file": "models/chair_office.glb",
+      "role": "chair_office",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 100
+    },
+    {
+      "id": "bookcase_archive",
+      "file": "models/bookcase_archive.glb",
+      "role": "bookcase_archive",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 200
+    },
+    {
+      "id": "cabinet_low",
+      "file": "models/cabinet_low.glb",
+      "role": "cabinet_low",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 60
+    },
+    {
+      "id": "journal",
+      "file": "models/journal.glb",
+      "role": "journal",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetLengthCm": 26
+    },
+    {
+      "id": "journal_red",
+      "file": "models/journal_red.glb",
+      "role": "journal_red",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetLengthCm": 24
+    },
+    {
+      "id": "desk_lamp",
+      "file": "models/desk_lamp.glb",
+      "role": "desk_lamp",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 45
+    },
+    {
+      "id": "analyzer",
+      "file": "models/analyzer.glb",
+      "role": "analyzer",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetWidthCm": 30
+    },
+    {
+      "id": "monitor_crt",
+      "file": "models/monitor_crt.glb",
+      "role": "monitor_crt",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetWidthCm": 45
+    },
+    {
+      "id": "tape_dispenser",
+      "file": "models/tape_dispenser.glb",
+      "role": "tape_dispenser",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetLengthCm": 15
+    },
+    {
+      "id": "clock_wall",
+      "file": "models/clock_wall.glb",
+      "role": "clock_wall",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetWidthCm": 35
+    },
+    {
+      "id": "pendant_lamp",
+      "file": "models/pendant_lamp.glb",
+      "role": "pendant_lamp",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetWidthCm": 45
+    },
+    {
+      "id": "houseplant",
+      "file": "models/houseplant.glb",
+      "role": "houseplant",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 90
+    },
+    {
+      "id": "water_bath",
+      "file": "models/water_bath.glb",
+      "role": "water_bath",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetWidthCm": 30
+    },
+    {
+      "id": "timer_clock",
+      "file": "models/timer_clock.glb",
+      "role": "timer_clock",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 12
+    },
+    {
+      "id": "spirit_lamp",
+      "file": "models/spirit_lamp.glb",
+      "role": "spirit_lamp",
+      "nativeSize": null,
+      "triangles": null,
+      "materials": null,
+      "textures": null,
+      "animations": null,
+      "targetHeightCm": 25
+    }
+  ]
+}

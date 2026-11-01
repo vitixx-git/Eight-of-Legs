@@ -1,0 +1,19 @@
+wait:6000
+eval:(()=>{const s=__game.scenes.current._state;s.mode='play';s.surf='T';s.pos.set(56,0,-88);s.toss.next=99;s.toss.phase='idle';s.toss.t=0;return 1})()
+wait:400
+press:KeyE
+wait:4000
+eval:(()=>{const s=__game.scenes.current._state;return {mode:s.mode,surf:s.surf,pos:s.pos.toArray().map(v=>+v.toFixed(1)),chk:__game.scenes.checkpoint,objDone:[0,1,2].map(i=>__game.objectives.isDone(i))}})()
+shot:/data/work/shots/s02_h.png
+down:KeyA
+wait:1500
+up:KeyA
+eval:(()=>{const s=__game.scenes.current._state;return {mode:s.mode,surf:s.surf,pos:s.pos.toArray().map(v=>+v.toFixed(1)),prompt:document.querySelector('.hud-prompt')?.textContent}})()
+shot:/data/work/shots/s02_i.png
+eval:(()=>{const s=__game.scenes.current._state;s.pos.set(16,0,-87);return 1})()
+wait:600
+eval:(()=>{const s=__game.scenes.current._state;return {mode:s.mode,surf:s.surf,pos:s.pos.toArray().map(v=>+v.toFixed(1)),prompt:[...document.querySelectorAll('#hud *')].map(e=>e.className).filter(c=>/prompt/.test(c)).join(','),ptext:document.querySelector('[class*=prompt]')?.textContent}})()
+press:KeyE
+wait:5000
+eval:(()=>({id:__game.scenes.currentId, mode:__game.scenes.current?._state?.mode}))()
+shot:/data/work/shots/s02_j.png

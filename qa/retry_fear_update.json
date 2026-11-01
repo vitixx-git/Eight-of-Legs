@@ -1,0 +1,363 @@
+{
+  "builtIn": {
+    "pass": true,
+    "total": 47,
+    "failed": 0,
+    "results": [
+      {
+        "name": "test.save",
+        "checks": [
+          {
+            "ok": true,
+            "label": "запись/чтение: сцена, точка, флаги, предметы, статистика",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "все флаги — boolean",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "continuePoint = сохранённая точка",
+            "detail": "{\"scene\":\"S07_Morning\",\"checkpoint\":\"sink\"} = {\"scene\":\"S07_Morning\",\"checkpoint\":\"sink\"}"
+          },
+          {
+            "ok": true,
+            "label": "повреждённый JSON → null, без исключения",
+            "detail": "json"
+          },
+          {
+            "ok": true,
+            "label": "JSON null → отклонён",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "v ≠ 1 → отклонено",
+            "detail": "version"
+          },
+          {
+            "ok": true,
+            "label": "неизвестная сцена → отклонено",
+            "detail": "scene"
+          },
+          {
+            "ok": true,
+            "label": "неизвестная контрольная точка → отклонено",
+            "detail": "checkpoint"
+          },
+          {
+            "ok": true,
+            "label": "отсутствующие флаги/предметы → false",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "сохранение в S04_Reflex → продолжение с того же защитника",
+            "detail": "S04_Reflex"
+          },
+          {
+            "ok": true,
+            "label": "поражение в S04_Reflex не возвращает к предыдущему защитнику",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "сохранение в S05_Fear → продолжение с того же защитника",
+            "detail": "S05_Fear"
+          },
+          {
+            "ok": true,
+            "label": "поражение в S05_Fear не возвращает к предыдущему защитнику",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "сохранение в S06_Will → продолжение с того же защитника",
+            "detail": "S06_Will"
+          },
+          {
+            "ok": true,
+            "label": "поражение в S06_Will не возвращает к предыдущему защитнику",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "дорога → с начала",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "нет localStorage → игра без сохранений, без исключений",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "исключения хранилища перехватываются",
+            "detail": ""
+          }
+        ],
+        "ok": true,
+        "ms": 2,
+        "note": ""
+      },
+      {
+        "name": "test.battle",
+        "checks": [
+          {
+            "ok": true,
+            "label": "Страх: три отверстия (угол 0.00)",
+            "detail": "3 = 3"
+          },
+          {
+            "ok": true,
+            "label": "все три отверстия безопасны для паука",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "твёрдые дуги между отверстиями опасны",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "отрисовка не перекрывает отверстия и шов окружности",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "Страх: три отверстия (угол 3.13)",
+            "detail": "3 = 3"
+          },
+          {
+            "ok": true,
+            "label": "все три отверстия безопасны для паука",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "твёрдые дуги между отверстиями опасны",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "отрисовка не перекрывает отверстия и шов окружности",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "Страх: три отверстия (угол -3.13)",
+            "detail": "3 = 3"
+          },
+          {
+            "ok": true,
+            "label": "все три отверстия безопасны для паука",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "твёрдые дуги между отверстиями опасны",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "отрисовка не перекрывает отверстия и шов окружности",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "Страх: три отверстия (угол 7.50)",
+            "detail": "3 = 3"
+          },
+          {
+            "ok": true,
+            "label": "все три отверстия безопасны для паука",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "твёрдые дуги между отверстиями опасны",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "отрисовка не перекрывает отверстия и шов окружности",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "S04 Рефлекс: атаки защитника доходят до паука (5 попаданий за 120 с)",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "S04 Рефлекс: каждое попадание с предупреждением ≥ 0.4 с",
+            "detail": "мин. 0.80 с"
+          },
+          {
+            "ok": true,
+            "label": "S04 Рефлекс: без нажатия Shift рывков нет",
+            "detail": "0 = 0"
+          },
+          {
+            "ok": true,
+            "label": "S05 Страх: атаки защитника доходят до паука (28 попаданий за 120 с)",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "S05 Страх: каждое попадание с предупреждением ≥ 0.4 с",
+            "detail": "мин. 0.63 с"
+          },
+          {
+            "ok": true,
+            "label": "S05 Страх: без нажатия Shift рывков нет",
+            "detail": "0 = 0"
+          },
+          {
+            "ok": true,
+            "label": "S06 Воля: атаки защитника доходят до паука (4 попаданий за 120 с)",
+            "detail": ""
+          },
+          {
+            "ok": true,
+            "label": "S06 Воля: каждое попадание с предупреждением ≥ 0.4 с",
+            "detail": "мин. 1.00 с"
+          },
+          {
+            "ok": true,
+            "label": "S06 Воля: без нажатия Shift рывков нет",
+            "detail": "0 = 0"
+          },
+          {
+            "ok": true,
+            "label": "после попадания i-frames = 1 с",
+            "detail": "1.000 ≈ 1 ± 0.000001"
+          },
+          {
+            "ok": true,
+            "label": "повторное попадание через 0,5 с блокируется, через 1,05 с проходит",
+            "detail": "hit / iframes / hit"
+          },
+          {
+            "ok": true,
+            "label": "атака без предупреждения ≥ 0,4 с не наносит урона и фиксируется",
+            "detail": "rejected"
+          },
+          {
+            "ok": true,
+            "label": "Shift удерживается 5 с: ровно один рывок по нажатию",
+            "detail": "0 → 1 → 1"
+          }
+        ],
+        "ok": true,
+        "ms": 113,
+        "note": ""
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "Коллизии: все отверстия безопасны, сплошные дуги наносят урон",
+      "ok": true,
+      "detail": {
+        "cases": 24,
+        "failed": []
+      }
+    },
+    {
+      "name": "S04_Reflex: победа немедленно сохранена до перехода",
+      "ok": true,
+      "detail": {
+        "point": {
+          "scene": "S05_Fear",
+          "checkpoint": "start"
+        },
+        "reloaded": {
+          "scene": "S05_Fear",
+          "checkpoint": "start"
+        }
+      }
+    },
+    {
+      "name": "S05_Fear: поражение перезапускает только текущего человечка",
+      "ok": true,
+      "detail": {
+        "id": "S05_Fear",
+        "point": {
+          "scene": "S05_Fear",
+          "checkpoint": "start"
+        },
+        "events": [
+          "S05_Fear"
+        ]
+      }
+    },
+    {
+      "name": "S05_Fear: поражение перезапускает только текущего человечка",
+      "ok": true,
+      "detail": {
+        "id": "S05_Fear",
+        "point": {
+          "scene": "S05_Fear",
+          "checkpoint": "start"
+        },
+        "events": [
+          "S05_Fear"
+        ]
+      }
+    },
+    {
+      "name": "S05_Fear: победа немедленно сохранена до перехода",
+      "ok": true,
+      "detail": {
+        "point": {
+          "scene": "S06_Will",
+          "checkpoint": "start"
+        },
+        "reloaded": {
+          "scene": "S06_Will",
+          "checkpoint": "start"
+        }
+      }
+    },
+    {
+      "name": "S06_Will: поражение перезапускает только текущего человечка",
+      "ok": true,
+      "detail": {
+        "id": "S06_Will",
+        "point": {
+          "scene": "S06_Will",
+          "checkpoint": "start"
+        },
+        "events": [
+          "S06_Will"
+        ]
+      }
+    },
+    {
+      "name": "S06_Will: поражение перезапускает только текущего человечка",
+      "ok": true,
+      "detail": {
+        "id": "S06_Will",
+        "point": {
+          "scene": "S06_Will",
+          "checkpoint": "start"
+        },
+        "events": [
+          "S06_Will"
+        ]
+      }
+    },
+    {
+      "name": "Новая игра начинает историю заново",
+      "ok": true,
+      "detail": {
+        "scene": "S01_Intro",
+        "checkpoint": "start"
+      }
+    }
+  ],
+  "messages": []
+}

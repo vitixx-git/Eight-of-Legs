@@ -1,0 +1,17 @@
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Внешние инструменты QA (в игру не входят — по правилам проекта без Node)
+node_modules/
+package.json
+package-lock.json
+*.log
+
+# Временные снимки проверок
+shots/

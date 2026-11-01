@@ -1,0 +1,92 @@
+{
+  "status": "procedural_prototype",
+  "originalHouseKitAvailable": false,
+  "realGameplayIntegrated": false,
+  "size": [
+    1920,
+    1080
+  ],
+  "cameraWidthCm": 1680,
+  "hotspots": "SPR_HOUSE_BG_hotspots.json",
+  "variants": [
+    {
+      "variant": "DAY",
+      "ms": 1741.6999999999534,
+      "width": 1920,
+      "height": 1080,
+      "hotspots": {
+        "HALL": {
+          "x": 714,
+          "y": 645,
+          "width": 343,
+          "height": 326
+        },
+        "BATH": {
+          "x": 771,
+          "y": 317,
+          "width": 286,
+          "height": 315
+        },
+        "STUDY": {
+          "x": 1354,
+          "y": 305,
+          "width": 480,
+          "height": 352
+        },
+        "LIVING": {
+          "x": 1354,
+          "y": 645,
+          "width": 480,
+          "height": 352
+        },
+        "STAIRS": {
+          "x": 1057,
+          "y": 311,
+          "width": 297,
+          "height": 669
+        }
+      }
+    },
+    {
+      "variant": "NIGHT",
+      "ms": 1113.2999999998137,
+      "width": 1920,
+      "height": 1080,
+      "hotspots": {
+        "HALL": {
+          "x": 714,
+          "y": 645,
+          "width": 343,
+          "height": 326
+        },
+        "BATH": {
+          "x": 771,
+          "y": 317,
+          "width": 286,
+          "height": 315
+        },
+        "STUDY": {
+          "x": 1354,
+          "y": 305,
+          "width": 480,
+          "height": 352
+        },
+        "LIVING": {
+          "x": 1354,
+          "y": 645,
+          "width": 480,
+          "height": 352
+        },
+        "STAIRS": {
+          "x": 1057,
+          "y": 311,
+          "width": 297,
+          "height": 669
+        }
+      }
+    }
+  ],
+  "cache": "in-memory per house/configuration/revision; pre-exported PNGs included",
+  "observedColdBakeMaxMs": 2424,
+  "stableUnderTwoSecondsVerified": false
+}

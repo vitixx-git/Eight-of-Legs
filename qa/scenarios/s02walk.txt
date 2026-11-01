@@ -1,0 +1,19 @@
+wait:6000
+eval:(()=>{const g=window.__game;g.debugState.god=true;window.__S=()=>g.scenes.current._state;window.__info=(tag)=>{const s=__S();return tag+': scene '+g.scenes.currentId+' surf '+s.surf+' mode '+s.mode+' pos '+s.pos.x.toFixed(1)+','+s.pos.y.toFixed(1)+','+s.pos.z.toFixed(1)+' camF '+s.camF.x.toFixed(2)+','+s.camF.y.toFixed(2)+' lock '+(s.lock?s.lock.f.x.toFixed(2)+','+s.lock.f.y.toFixed(2):'-')+' obj '+[0,1,2].map(i=>g.objectives.isDone(i)?1:0).join('')+' chk '+g.scenes.checkpoint+' t '+s.time.toFixed(1)};window.__until=async(fn,ms)=>{const t0=performance.now();while(performance.now()-t0<ms){if(fn())return true;await new Promise(r=>setTimeout(r,50));}return false};window.__camMinZ=1e9;window.__camMinD=1e9;setInterval(()=>{const sc=g.scenes.current,s=sc&&sc._state,c=sc&&sc._camera;if(s&&c&&s.surf==='P'&&s.mode==='play'){__camMinZ=Math.min(__camMinZ,c.position.z);__camMinD=Math.min(__camMinD,c.position.distanceTo(s.pos))}},30);return __info('start')})()
+down:KeyW
+down:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().pos.x>=34,25000);return __info('x>=34 '+ok)})()
+up:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().surf!=='B'||__S().mode==='edge',30000);return __info('left B '+ok)})()
+eval:(async()=>{const ok=await __until(()=>__S().surf==='T'&&__S().mode==='play',5000);return __info('on T '+ok)})()
+shot:/data/work/shots/s02w_1_onT.png
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'||__S().mode==='edge'&&__S().edge.to==='P',15000);return __info('climb start '+ok)})()
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'&&__S().mode==='play',5000);return __info('on P '+ok)})()
+shot:/data/work/shots/s02w_2_onP.png
+eval:(async()=>{const ok=await __until(()=>!__S().lock,8000);return __info('W still held, lock released (blocked) '+ok)})()
+shot:/data/work/shots/s02w_3_back.png
+eval:(async()=>{const ok=await __until(()=>/проникнуть/.test(document.querySelector('[class*=prompt]')?.textContent||''),20000);return __info('ear prompt, W held all the way '+ok)+' prompt='+(document.querySelector('[class*=prompt]')?.textContent||'')+' camMinZ '+__camMinZ.toFixed(1)+' camMinDist '+__camMinD.toFixed(1)})()
+shot:/data/work/shots/s02w_4_ear.png
+press:KeyE
+up:KeyW
+eval:(async()=>{const ok=await __until(()=>__game.scenes.currentId==='S03_Meet',20000);return 'S03 reached '+ok+' scene '+__game.scenes.currentId+' camMinZ '+__camMinZ.toFixed(1)+' camMinDist '+__camMinD.toFixed(1)})()

@@ -1,0 +1,16 @@
+import * as THREE from 'three';
+import {createWill} from '../js/models/will.js';
+import {visibleBox,visibleTris} from '../js/models/humanKit.js';
+export function checkWill(){const m=createWill(),r=[],add=(name,ok,detail='')=>r.push({name,ok,detail});
+ add('Бюджет ≤1500',visibleTris(m.group)<=1500,String(m.tris));const b=visibleBox(m.group);add('Макушка 12,5 ±0,2',Math.abs(b.max.y-12.5)<=.2,b.max.y.toFixed(3));
+ let mats=true,maps=0,outlines=true;m.group.traverse(o=>{if(!o.isMesh||o.userData.humanOutline)return;const mat=o.material;mats&&=mat.isMeshStandardMaterial&&mat.flatShading&&mat.roughness===.69&&mat.metalness===0;if(mat.map)maps++;if(/^(Frame|Pupil|Pen|Temple|Bridge)/.test(o.name))outlines&&=!o.children.some(c=>c.userData.humanOutline);});add('Матовые flatShading; только наклейка с текстурой',mats&&maps===1);add('Исключения обводки',outlines);
+ const shoeMin=s=>{m.group.updateMatrixWorld(true);const o=m.group.getObjectByName('Shoe.'+s);o.geometry.computeBoundingBox();return o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld).min.y;};
+ add('Guard: ботинки на полу',['L','R'].every(s=>Math.abs(shoeMin(s))<.001));let stomps=0,ground=true,finite=true,jaw=true;
+ m.onStomp=()=>{stomps++;ground&&=['L','R'].every(s=>Math.abs(shoeMin(s))<.001);};m.animator.play('intro');for(let i=0;i<180;i++){m.animator.update(1/120);for(const j of Object.values(m.joints))finite&&=[...j.position,...j.quaternion].every(Number.isFinite);}
+ add('Intro: ровно 2 шага при касании пола',stomps===2&&ground,String(stomps));for(let i=0;i<60;i++)m.animator.update(1/60);add('После intro: idle и опора',m.animator.name==='idle'&&['L','R'].every(s=>Math.abs(shoeMin(s))<.001));
+ let syllables=0;m.onSyllable=()=>syllables++;m.animator.play('talk',{text:'Посторонним в голове не место.'});for(let i=0;i<400;i++){m.animator.update(.01);jaw&&=Math.abs(m.joints.jaw.rotation.x)<=8*Math.PI/180+1e-6;}
+ add('Речь: события, jaw ≤8°, закрыта в конце',syllables>0&&jaw&&Math.abs(m.joints.jaw.rotation.x)<1e-6,String(syllables));add('Конечные трансформации',finite);
+ let clear=true,tailClear=true;for(const clip of ['intro','talk','idle']){m.animator.play(clip,{duration:2});m.animator.from=null;for(let frame=0;frame<180;frame++){m.animator.update(1/120);m.group.updateMatrixWorld(true);const inv=m.shield.matrixWorld.clone().invert();for(const name of ['Head','Body','Thigh.L','Thigh.R','Shin.L','Shin.R']){const obj=m.group.getObjectByName(name),ps=obj.geometry.attributes.position,v=new THREE.Vector3();for(let i=0;i<ps.count;i++){v.fromBufferAttribute(ps,i).applyMatrix4(obj.matrixWorld).applyMatrix4(inv);clear&&=!(Math.abs(v.x)<4&&Math.abs(v.y)<5&&Math.abs(v.z)<.4);}}
+ for(const s of ['L','R']){const tail=m.group.getObjectByName('CoatTail.'+s);tail.geometry.computeBoundingBox();const tb=tail.geometry.boundingBox.clone().applyMatrix4(tail.matrixWorld);for(const leg of ['Thigh.','Shin.']){const o=m.group.getObjectByName(leg+s);o.geometry.computeBoundingBox();tailClear&&=!tb.intersectsBox(o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld));}}}}
+ add('Папка: выборка вершин вне головы, тела и ног',clear);add('Полы: AABB не пересекают ноги',tailClear);
+ m.group.traverse(o=>{if(o.isMesh)o.geometry.dispose();});for(const mat of Object.values(m.materials)){mat.map?.dispose();mat.dispose();}return r;}

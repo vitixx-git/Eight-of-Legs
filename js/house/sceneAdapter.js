@@ -1,0 +1,3 @@
+import {furnishRoom} from './furnish.js';
+/** Подключать лишь после получения настоящих сцен. Сам адаптер не двигает комнаты/контрольные точки. */
+export async function attachHouse(owner){if(!owner.root||!owner.roomId)throw Error('Нужны root и roomId');const furniture=await furnishRoom(owner.roomId,owner.root,{buildShell:false,config:owner.config,manifest:owner.manifest,useKit:owner.useKit,protectedPoints:owner.protectedPoints});return {furniture,update(time,progress){furniture.update(time,progress);},setOcclusionHeight(cm){furniture.setOcclusionHeight(cm);},get colliders(){return furniture.colliders;},dispose(){furniture.dispose();}};}

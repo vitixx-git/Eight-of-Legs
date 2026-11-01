@@ -1,0 +1,3 @@
+wait:3000
+eval:(async()=>{for(let i=0;i<2400;i++){if(window.__tests&&window.__tests.done)break;await new Promise(r=>setTimeout(r,500));}return window.__tests?('done='+window.__tests.done+' pass='+window.__tests.pass+' '+window.__tests.failed+'/'+window.__tests.total):'none'})()
+shot:/data/work/shots/tests_2.png

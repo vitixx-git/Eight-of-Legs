@@ -1,0 +1,43 @@
+wait:6000
+eval:(()=>{const g=window.__game;g.debugState.god=true;window.__S=()=>g.scenes.current&&g.scenes.current._state;window.__info=(tag)=>{const s=__S();if(!s)return tag+': no state, scene '+g.scenes.currentId;return tag+': surf '+s.surf+' mode '+s.mode+' pos '+s.pos.x.toFixed(1)+','+s.pos.y.toFixed(1)+','+s.pos.z.toFixed(1)+' camF '+s.camF.x.toFixed(2)+','+s.camF.y.toFixed(2)+' lock '+(s.lock?'Y':'-')+' obj '+[0,1,2].map(i=>g.objectives.isDone(i)?1:0).join('')+' chk '+g.scenes.checkpoint};window.__until=async(fn,ms)=>{const t0=performance.now();while(performance.now()-t0<ms){try{if(fn())return true}catch(e){}await new Promise(r=>setTimeout(r,50));}return false};window.__tp=(surf,x,z,cx,cz)=>{const s=__S();s.mode='play';s.surf=surf;s.pos.set(x,0,z);s.vel.set(0,0);s.camF.set(cx,cz).normalize();s.lock=null;s.toss.next=1e9;s.toss.phase='idle';s.wake=0;return __info('tp '+surf)};return __tp('T',-55,-85,0,-1)})()
+wait:800
+down:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'&&__S().mode==='play',8000);return __info('left climb '+ok)})()
+up:KeyD
+wait:1500
+shot:/data/work/shots/s02e_1_leftP.png
+eval:(()=>__info('left P +1.5s'))()
+down:KeyW
+wait:2500
+up:KeyW
+eval:(()=>__info('left P W→head'))()
+down:KeyD
+wait:4000
+up:KeyD
+eval:(()=>__info('orbit D 4s'))()
+shot:/data/work/shots/s02e_2_orbit.png
+down:KeyD
+wait:4000
+up:KeyD
+eval:(()=>__info('orbit D 8s'))()
+eval:(()=>{const s=__S();const f=window.__game.scenes.current;return __tp('P',30,-85,-1,0)})()
+wait:800
+down:KeyS
+eval:(async()=>{const ok=await __until(()=>__S().surf==='T'&&__S().mode==='play',8000);return __info('P→T side drop '+ok)})()
+up:KeyS
+eval:(()=>__tp('P',33,-80,-0.9,-0.4))()
+wait:800
+eval:(()=>{const s=__S();return 'camF now '+s.camF.x.toFixed(2)+','+s.camF.y.toFixed(2)})()
+eval:(()=>__tp('T',40,-62,0,-1))()
+wait:500
+down:KeyS
+eval:(async()=>{const ok=await __until(()=>__S().surf==='B'&&__S().mode==='play',8000);return __info('T→B edge '+ok)})()
+up:KeyS
+eval:(()=>__tp('T',56,-88,0,-1))()
+wait:600
+press:KeyE
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'&&__S().mode==='play',10000);return __info('W2 up '+ok)})()
+wait:600
+eval:(()=>'W2 down prompt: '+(document.querySelector('[class*=prompt]')?.textContent||'-'))()
+press:KeyE
+eval:(async()=>{const ok=await __until(()=>__S().surf==='T'&&__S().mode==='play',10000);return __info('W2 down '+ok)})()

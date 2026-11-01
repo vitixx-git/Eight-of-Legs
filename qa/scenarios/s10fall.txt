@@ -1,0 +1,15 @@
+wait:5000
+eval:import('/tools/autopilot.js').then(m=>m.install([{x:-36,z:48,tol:6},{use:true},{wait:1.0},{x:60,z:48,tol:8},{wait:30}]))
+wait:7000
+eval:(()=>{const s=__game.scenes.current;return s.debugInfo()})()
+eval:(()=>{const s=__game.scenes.current;s._dbg.ctl.startFall();return 'fall'})()
+wait:500
+shot:/data/work/shots/s10f_1.png
+wait:900
+shot:/data/work/shots/s10f_2.png
+eval:(()=>{const s=__game.scenes.current,D=s._dbg;return s.debugInfo()+' cont '+D.P.cont.position.toArray().map(v=>v.toFixed(0))+' failing '+__game.scenes.failing})()
+wait:2500
+press:KeyE
+wait:1500
+eval:(()=>{const s=__game.scenes.current,D=s._dbg;return s.debugInfo()+' cont '+D.P.cont.position.toArray().map(v=>v.toFixed(0))+' vis '+D.P.cont.visible+' chk '+__game.scenes.checkpoint+' retries '+__game.save.data.stats.retries+' flags '+JSON.stringify(__game.save.data.flags)})()
+shot:/data/work/shots/s10f_3.png

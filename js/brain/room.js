@@ -1,0 +1,17 @@
+import * as THREE from 'three';
+import * as k from './kit.js';
+import {polar,colors,brainVisual as visual} from './layout.js';
+/** Minimal §8.5 adapter. Never replaces objects already provided by a game scene. */
+export function buildBrainRoom(root){
+ const owned=new THREE.Group();owned.name='BRAIN_PROCEDURAL_ADAPTER';root.add(owned);const objects={};
+ function part(name,build){let g=root.getObjectByName(name);if(!g){g=new THREE.Group();g.name=name;owned.add(g);build(g);}objects[name]=g;return g;}
+ part('BRAIN_FLOOR',g=>k.cylinder(g,'Floor',60,1,[0,-.5,0],visual.floor));
+ part('BRAIN_DOME',g=>{const dome=k.mesh(g,'Dome',new THREE.SphereGeometry(80,32,16,0,Math.PI*2,0,Math.PI/2),visual.dome);dome.material.side=THREE.BackSide;for(let i=0;i<12;i++){const curve=new THREE.CatmullRomCurve3(Array.from({length:20},(_,j)=>new THREE.Vector3(...polar(i*30+Math.sin(j)*6,65*Math.sin(j/19*Math.PI/2),65*Math.cos(j/19*Math.PI/2)))));k.mesh(g,'Fold',new THREE.TubeGeometry(curve,24,.8,5,false),visual.fold);}});
+ for(let i=0;i<6;i++)part('NERVE_TUBE_'+i,g=>{const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(...polar(i*60,58,0)),new THREE.Vector3(...polar(i*60+5,67,25)),new THREE.Vector3(...polar(i*60-10,40,62))]);k.mesh(g,'Nerve',new THREE.TubeGeometry(curve,20,1.1,6,false),visual.nerve);});
+ part('NEURONS',g=>{for(let i=0;i<24;i++)k.sphere(g,'Neuron',.5,polar(i*137,61,8+i%5*7),visual.neuron);});
+ part('CONSOLE_BARRIER',g=>{g.position.z=-20;const m=k.box(g,'Energy',[31,18,.15],[0,9,0],'#9f7bff',0);m.material.transparent=true;m.material.opacity=.25;k.label(g,'BarrierText','ДОСТУП ЗАКРЫТ',13,2.4,[0,12,.15]);});
+ part('COCKPIT_PANEL',g=>{g.position.z=-33;k.box(g,'Desk',[26,2,8],[0,7,0]);for(let i=0;i<4;i++){const lever=new THREE.Group();lever.name='Lever'+i;lever.position.set(-8+i*5.3,8,0);g.add(lever);k.cylinder(lever,'Stick',.12,3,[0,1.5,0],'#6b5a7a');k.sphere(lever,'Handle',.55,[0,3,0],colors[i]);k.label(g,'LeverLabel'+i,['НОГИ','РУКИ','ГЛАЗА','ГОЛОС'][i],4.8,1.2,[-8+i*5.3,7,4.1]);}for(let i=0;i<3;i++)k.box(g,'MiniScreen',[3,1.5,.2],[-5+i*5,9,-2],'#7fd18b');k.box(g,'RedButton',[1,.3,1],[11,8,2],'#d95a7a');const cover=k.box(g,'Cover',[1.6,.7,1.6],[11,8.5,2],'#bfe0ff');cover.material.transparent=true;cover.material.opacity=.35;k.label(g,'MouthLabel','РОТ — НЕ ТРОГАТЬ',12,1.4,[5,5.2,4.1]);});
+ const lights=new THREE.Group();owned.add(lights);const ambient=new THREE.HemisphereLight(visual.sleep.sky,visual.sleep.ground,visual.sleep.ambient);lights.add(ambient);const key=new THREE.DirectionalLight(visual.sleep.key,visual.sleep.keyIntensity);key.position.set(0,50,25);lights.add(key);const fills=[];for(let i=0;i<3;i++){const l=new THREE.PointLight(visual.sleep.fill,visual.sleep.fillIntensity,55,2);l.position.fromArray(polar(i*120+30,45,20));lights.add(l);fills.push(l);}
+ function setAwake(amount){const a=THREE.MathUtils.clamp(amount,0,1),s=visual.sleep,w=visual.awake;ambient.color.set(s.sky).lerp(new THREE.Color(w.sky),a);ambient.groundColor.set(s.ground).lerp(new THREE.Color(w.ground),a);ambient.intensity=THREE.MathUtils.lerp(s.ambient,w.ambient,a);key.color.set(s.key).lerp(new THREE.Color(w.key),a);key.intensity=THREE.MathUtils.lerp(s.keyIntensity,w.keyIntensity,a);for(const l of fills){l.color.set(s.fill).lerp(new THREE.Color(w.fill),a);l.intensity=THREE.MathUtils.lerp(s.fillIntensity,w.fillIntensity,a);}}
+ return {objects,owned,lights,key,ambient,fills,setAwake,dispose(){k.dispose(owned);}};
+}

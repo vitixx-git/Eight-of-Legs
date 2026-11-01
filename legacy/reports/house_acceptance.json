@@ -1,0 +1,354 @@
+{
+  "restore": {
+    "old": {
+      "variant": "DAY",
+      "visible": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "time": 0.2,
+      "clock": -5.445427266222309,
+      "viewport": [
+        0,
+        0,
+        1120,
+        896
+      ]
+    },
+    "restored": {
+      "variant": "DAY",
+      "visible": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "time": 0.2,
+      "clock": -5.445427266222309,
+      "viewport": [
+        0,
+        0,
+        1120,
+        896
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "Все 24 процедурных типа присутствуют",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Оригинальные 24 GLB",
+      "ok": false,
+      "verified": false
+    },
+    {
+      "name": "Проход CHAIR–кровать: 70.0 см",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Демо-проход у двери 65 см",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Часы: узлы обеих стрелок найдены",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Все коллайдеры имеют ненулевые AABB",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Габариты STUDY ≤80 000 треугольников",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "HALL + BATH + лестница ≤90 000 треугольников",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Пять hotspots в кадре 1920×1080",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Геймплей настоящих S07/S08",
+      "ok": false,
+      "verified": false
+    },
+    {
+      "name": "FPS ≥55 на среднем ноутбуке",
+      "ok": false,
+      "verified": false
+    },
+    {
+      "name": "Нормализация тестового бокса: 85 см / центр XZ / низ Y=0",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Толчок стула ровно 10 см и обновление коллайдера",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Часы S07 идут на 12 минут",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Мигание router 1 Гц",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Прозрачность верхней мебели включается",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Кэш DAY",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Кэш NIGHT",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "После запекания восстановлены видимость, свет, часы и viewport",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Canvas fallback 1920×1080 и те же hotspots",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Клик по центру HALL",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Клик по центру BATH",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Клик по центру STUDY",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Клик по центру STAIRS",
+      "ok": true,
+      "verified": true
+    },
+    {
+      "name": "Клик по центру LIVING",
+      "ok": true,
+      "verified": true
+    }
+  ],
+  "baked": [
+    {
+      "variant": "DAY",
+      "ms": 1741.6999999999534,
+      "width": 1920,
+      "height": 1080,
+      "hotspots": {
+        "HALL": {
+          "x": 714,
+          "y": 645,
+          "width": 343,
+          "height": 326
+        },
+        "BATH": {
+          "x": 771,
+          "y": 317,
+          "width": 286,
+          "height": 315
+        },
+        "STUDY": {
+          "x": 1354,
+          "y": 305,
+          "width": 480,
+          "height": 352
+        },
+        "LIVING": {
+          "x": 1354,
+          "y": 645,
+          "width": 480,
+          "height": 352
+        },
+        "STAIRS": {
+          "x": 1057,
+          "y": 311,
+          "width": 297,
+          "height": 669
+        }
+      }
+    },
+    {
+      "variant": "NIGHT",
+      "ms": 1113.2999999998137,
+      "width": 1920,
+      "height": 1080,
+      "hotspots": {
+        "HALL": {
+          "x": 714,
+          "y": 645,
+          "width": 343,
+          "height": 326
+        },
+        "BATH": {
+          "x": 771,
+          "y": 317,
+          "width": 286,
+          "height": 315
+        },
+        "STUDY": {
+          "x": 1354,
+          "y": 305,
+          "width": 480,
+          "height": 352
+        },
+        "LIVING": {
+          "x": 1354,
+          "y": 645,
+          "width": 480,
+          "height": 352
+        },
+        "STAIRS": {
+          "x": 1057,
+          "y": 311,
+          "width": 297,
+          "height": 669
+        }
+      }
+    }
+  ],
+  "hotspots": {
+    "HALL": {
+      "x": 714,
+      "y": 645,
+      "width": 343,
+      "height": 326
+    },
+    "BATH": {
+      "x": 771,
+      "y": 317,
+      "width": 286,
+      "height": 315
+    },
+    "STUDY": {
+      "x": 1354,
+      "y": 305,
+      "width": 480,
+      "height": 352
+    },
+    "LIVING": {
+      "x": 1354,
+      "y": 645,
+      "width": 480,
+      "height": 352
+    },
+    "STAIRS": {
+      "x": 1057,
+      "y": 311,
+      "width": 297,
+      "height": 669
+    }
+  },
+  "triangles": 22988,
+  "rooms": {
+    "HALL": {
+      "triangles": 4470,
+      "issues": [],
+      "adjustments": []
+    },
+    "BATH": {
+      "triangles": 1720,
+      "issues": [],
+      "adjustments": []
+    },
+    "STUDY": {
+      "triangles": 8012,
+      "issues": [],
+      "adjustments": [
+        {
+          "object": "alarm_clock_6",
+          "from": [
+            40,
+            75,
+            -125
+          ],
+          "to": [
+            42,
+            75,
+            -119
+          ],
+          "reason": "20 см вокруг демонстрационных PASS_CARD / MUG"
+        },
+        {
+          "object": "tape_dispenser_9",
+          "from": [
+            5,
+            75,
+            -160
+          ],
+          "to": [
+            -45,
+            75,
+            -163
+          ],
+          "reason": "20 см вокруг демонстрационных PASS_CARD / MUG"
+        }
+      ]
+    },
+    "LIVING": {
+      "triangles": 3968,
+      "issues": [],
+      "adjustments": []
+    }
+  },
+  "types": [
+    "dresser_low",
+    "kerosene_lamp",
+    "clock_wall",
+    "carpet",
+    "houseplant",
+    "ceiling_lamp",
+    "floor_wood",
+    "toothpaste",
+    "toilet_paper",
+    "sponge",
+    "bed_single",
+    "bookcase",
+    "chair_wood",
+    "dresser_tall",
+    "desk_lamp",
+    "router",
+    "alarm_clock",
+    "book_red",
+    "tape_dispenser",
+    "curtains",
+    "book",
+    "couch",
+    "tv_retro",
+    "chair_office"
+  ],
+  "messages": []
+}

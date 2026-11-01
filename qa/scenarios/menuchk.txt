@@ -1,0 +1,25 @@
+wait:2500
+eval:(()=>{localStorage.setItem('vosem_lap_save_v1','{bad json');location.reload();return 'set corrupt'})()
+wait:3500
+eval:(()=>{window.dispatchEvent(new KeyboardEvent('keydown',{code:'KeyQ',bubbles:true}));setTimeout(()=>window.dispatchEvent(new KeyboardEvent('keyup',{code:'KeyQ',bubbles:true})),150);return 'key'})()
+wait:1200
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Играть/.test(x.textContent));p&&p.click();return 'TC03 buttons: '+[...document.querySelectorAll('button')].map(x=>x.textContent).join('|')})()
+wait:1000
+eval:(()=>{const txt=document.body.innerText;return 'TC03 corrupt dialog: '+/Сохранение повреждено/.test(txt)+' | scene '+window.__game.scenes.currentId+' | buttons '+[...document.querySelectorAll('button')].map(x=>x.textContent).join('|')})()
+eval:(()=>{const now=Date.now();const s={v:1,scene:'S07_Morning',checkpoint:'landing1',flags:{memorySeen:true,meetSeen:true,leversDone:true,dressed:false,mirrorDone:false,s10_stopped:false,s10_inserted:false,poisonDestroyed:false},items:{pass:false,notebook:false,keys:false},stats:{startedAt:now,playMs:600000,retries:3},completed:false,updatedAt:now};localStorage.setItem('vosem_lap_save_v1',JSON.stringify(s));localStorage.setItem('vosem_lap_settings_v1',JSON.stringify({master:70,music:50,sfx:90,amb:40,mute:true,quality:'low',shake:false,lessFx:true,cockpit:false}));location.reload();return 'set valid save + settings'})()
+wait:3500
+eval:(()=>{const g=window.__game;return 'TC05 settings: '+JSON.stringify(g.settings)+' | renderer.quality '+(g.renderer&&g.renderer.quality)+' | pixelRatio '+(g.renderer&&g.renderer.three.getPixelRatio())+' | shadows '+(g.renderer&&g.renderer.three.shadowMap.enabled)})()
+eval:(()=>{window.dispatchEvent(new KeyboardEvent('keydown',{code:'KeyQ',bubbles:true}));setTimeout(()=>window.dispatchEvent(new KeyboardEvent('keyup',{code:'KeyQ',bubbles:true})),150);return 'key'})()
+wait:1200
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Играть/.test(x.textContent));p&&p.click();return 'menu text: '+document.body.innerText.replace(/\s+/g,' ').slice(0,300)})()
+wait:1000
+eval:(()=>{const b=[...document.querySelectorAll('button')];const p=b.find(x=>/Продолжить/.test(x.textContent));p&&p.click();return 'TC02 continue clicked '+!!p+' | '+[...document.querySelectorAll('button')].map(x=>x.textContent).join('|')})()
+wait:12000
+eval:(()=>{const g=window.__game;return 'TC02 scene '+g.scenes.currentId+' chk '+g.scenes.checkpoint+' | info '+(g.scenes.current&&g.scenes.current.debugInfo&&g.scenes.current.debugInfo())})()
+eval:(()=>{window.dispatchEvent(new KeyboardEvent('keydown',{code:'Escape',key:'Escape',bubbles:true}));setTimeout(()=>window.dispatchEvent(new KeyboardEvent('keyup',{code:'Escape',key:'Escape',bubbles:true})),150);return 'esc'})()
+wait:1500
+eval:(()=>{const g=window.__game;const t0=g.scenes.current._dbg&&g.scenes.current._dbg.H&&g.scenes.current._dbg.H.ctl.st.time;window.__t0=t0;return 'TC04 paused '+JSON.stringify({paused:g.paused??g.loop?.paused,pauseUI:!!document.querySelector('.pause, .pause-menu, .panel.pause'),text:document.body.innerText.replace(/\s+/g,' ').slice(0,160),audio:g.audio.state})})()
+wait:2000
+eval:(()=>{const g=window.__game;const t1=g.scenes.current._dbg&&g.scenes.current._dbg.H&&g.scenes.current._dbg.H.ctl.st.time;return 'TC04 game time frozen: '+(t1===window.__t0)+' ('+window.__t0+' → '+t1+')'})()
+shot:/data/work/shots/tc04_pause.png
+log

@@ -1,0 +1,8 @@
+{
+  "_readme": "Образец покадровой кат-сцены: файлы frames/f_001.jpg … f_090.jpg, 12 кадров/с, свой звук (необязательно).",
+  "type": "frames",
+  "frames": { "pattern": "frames/f_{000}.jpg", "count": 90, "start": 1 },
+  "fps": 12,
+  "audio": "frames/voice.mp3",
+  "subtitles": [ { "t": 1.0, "dur": 3.0, "text": "Это я, паук.", "who": "Паук" } ]
+}

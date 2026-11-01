@@ -1,0 +1,30 @@
+{
+  "draft": true,
+  "reason": "Оригинальные brain_kit GLB отсутствуют",
+  "files": [
+    {
+      "variant": "REFLEX",
+      "file": "SPR_ARENA_BG_REFLEX_DRAFT.png",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "variant": "FEAR",
+      "file": "SPR_ARENA_BG_FEAR_DRAFT.png",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "variant": "WILL",
+      "file": "SPR_ARENA_BG_WILL_DRAFT.png",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "variant": "COCKPIT",
+      "file": "SPR_COCKPIT_BG_DRAFT.png",
+      "width": 352,
+      "height": 220
+    }
+  ]
+}

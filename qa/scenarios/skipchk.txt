@@ -1,0 +1,25 @@
+wait:5000
+eval:(()=>{const g=window.__game;return 'start '+g.scenes.currentId+' | '+(g.scenes.current.debugInfo?g.scenes.current.debugInfo():'')})()
+down:Space
+wait:1500
+up:Space
+wait:2500
+eval:(()=>{const g=window.__game;return 'TC06 after hold-skip C_User: '+g.scenes.currentId})()
+wait:2000
+down:Space
+wait:450
+up:Space
+wait:1500
+eval:(()=>{const g=window.__game;return 'TC09 short hold (0.45 s): '+g.scenes.currentId+' t='+(g.scenes.current.debugInfo&&g.scenes.current.debugInfo())})()
+down:Space
+wait:1600
+up:Space
+wait:4000
+eval:(()=>{const g=window.__game;const sv=JSON.parse(localStorage.getItem('vosem_lap_save_v1')||'{}');return 'TC09 after long hold: '+g.scenes.currentId+' memorySeen='+(sv.flags&&sv.flags.memorySeen)})()
+eval:(async()=>{const c=await import('/js/config.js');c.CFG.userCutscene.manifest='assets/cutscene/__missing__.json';window.__errs=[];window.addEventListener('error',e=>window.__errs.push(String(e.message)));await window.__game.scenes.goto('C_User',{noCard:true});return 'TC07 goto C_User with missing manifest'})()
+wait:4000
+eval:(()=>{const g=window.__game;return 'TC07 during: '+g.scenes.currentId+' | '+(g.scenes.current.debugInfo?g.scenes.current.debugInfo():'')+' | text '+document.body.innerText.replace(/\s+/g,' ').slice(0,200)})()
+shot:/data/work/shots/tc07_fallback.png
+wait:16000
+eval:(()=>{const g=window.__game;return 'TC07 after: '+g.scenes.currentId+' errors='+JSON.stringify(window.__errs)})()
+log

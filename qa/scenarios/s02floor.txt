@@ -1,0 +1,12 @@
+wait:6000
+eval:(()=>{const g=window.__game;g.debugState.god=true;window.__S=()=>g.scenes.current&&g.scenes.current._state;const s=__S();s.mode='play';s.surf='F';s.pos.set(-150,0,-100);s.vel.set(0,0);s.camF.set(-1,-0.1).normalize();s.toss.next=1e9;g.scenes.current._state.yaw=-Math.PI/2;return 'tp floor '+s.pos.x+','+s.pos.z})()
+down:KeyW
+wait:4000
+up:KeyW
+eval:(()=>{const s=__S();return 'left wall: '+s.pos.x.toFixed(1)+','+s.pos.z.toFixed(1)})()
+shot:/data/work/shots/s02f_leftwall.png
+down:KeyD
+wait:5000
+up:KeyD
+eval:(()=>{const s=__S();return 'back wall: '+s.pos.x.toFixed(1)+','+s.pos.z.toFixed(1)})()
+shot:/data/work/shots/s02f_backwall.png

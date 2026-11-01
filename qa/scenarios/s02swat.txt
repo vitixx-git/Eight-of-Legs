@@ -1,0 +1,23 @@
+wait:6000
+eval:(async()=>{const g=window.__game;window.__S=()=>g.scenes.current&&g.scenes.current._state;window.__info=(tag)=>{const s=__S();if(!s)return tag+': no state, scene '+g.scenes.currentId;return tag+': surf '+s.surf+' mode '+s.mode+' pos '+s.pos.x.toFixed(1)+','+s.pos.z.toFixed(1)+' lit '+s.lit+' cover '+s.cover+' toss '+s.toss.phase+' chk '+g.scenes.checkpoint};window.__until=async(fn,ms)=>{const t0=performance.now();while(performance.now()-t0<ms){try{if(fn())return true}catch(e){}await new Promise(r=>setTimeout(r,50));}return false};const m=await import('/js/env/bedroom.js');window.__find=(surf,want)=>{const S=m.makeSurfaces()[surf],b=S.b;for(let z=b.z0+3;z<b.z1-3;z+=2)for(let x=b.x0+3;x<b.x1-3;x+=2){const[cx,cz]=m.resolveOn(S,x,z,1.4);if(Math.hypot(cx-x,cz-z)>1e-6)continue;const lit=m.inMoon(x,z),cov=surf==='B'?m.inFold(z):m.inDip(x,z);if(want(lit,cov))return[x,z]}return null};window.__tpToss=(surf,p)=>{const s=__S();s.mode='play';s.surf=surf;s.pos.set(p[0],0,p[1]);s.vel.set(0,0);s.lock=null;s.wake=0;s.toss.phase='idle';s.toss.t=0;s.toss.next=0.2;return __info('tp+toss '+surf)};g.debugState.god=false;return 'ready'})()
+eval:(()=>{const p=__find('B',(lit,cov)=>lit&&!cov);return __tpToss('B',p)})()
+eval:(async()=>{const ok=await __until(()=>!!document.querySelector('.defeat')||__S().toss.phase==='recover',20000);return 'B lit: defeat '+!!document.querySelector('.defeat')+' text='+(document.querySelector('.defeat')?.innerText||'').replace(/\s+/g,' ')})()
+shot:/data/work/shots/s02swat_1.png
+wait:1300
+press:Enter
+eval:(async()=>{const ok=await __until(()=>!document.querySelector('.defeat')&&__S()&&__S().mode==='play',6000);await new Promise(r=>setTimeout(r,300));return __info('respawn '+ok)})()
+eval:(()=>{const p=__find('B',(lit,cov)=>lit&&cov);return __tpToss('B',p)})()
+eval:(async()=>{await __until(()=>!!document.querySelector('.defeat')||__S().toss.phase==='recover',20000);return __info('B lit+fold (cover): after strike, defeat '+!!document.querySelector('.defeat'))})()
+eval:(()=>{const p=__find('B',(lit,cov)=>!lit&&!cov);return __tpToss('B',p)})()
+eval:(async()=>{await __until(()=>!!document.querySelector('.defeat')||__S().toss.phase==='recover',20000);return __info('B shadow: after strike, defeat '+!!document.querySelector('.defeat'))})()
+eval:(()=>{const s=__S();s.mode='play';s.surf='T';s.pos.set(-55,0,-85);s.vel.set(0,0);s.camF.set(0,-1);s.lock=null;s.toss.next=1e9;s.toss.phase='idle';s.toss.t=0;return __info('tp T')})()
+wait:500
+down:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'&&__S().mode==='play',8000);return __info('climb to P '+ok)})()
+up:KeyD
+eval:(()=>{const p=__find('P',(lit,cov)=>lit&&!cov);return p?__tpToss('P',p):'no lit P point'})()
+eval:(async()=>{await __until(()=>!!document.querySelector('.defeat')||__S().toss.phase==='recover',20000);return 'P lit: defeat '+!!document.querySelector('.defeat')+' text='+(document.querySelector('.defeat')?.innerText||'').replace(/\s+/g,' ')})()
+wait:1300
+press:Enter
+eval:(async()=>{const ok=await __until(()=>!document.querySelector('.defeat')&&__S()&&__S().mode==='play',6000);await new Promise(r=>setTimeout(r,300));return __info('respawn '+ok)})()
+shot:/data/work/shots/s02swat_2.png

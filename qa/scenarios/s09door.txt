@@ -1,0 +1,11 @@
+wait:3000
+eval:(()=>{const g=window.__game;window.__R=()=>g.scenes.current&&g.scenes.current._state;window.__until=async(fn,ms)=>{const t0=performance.now();while(performance.now()-t0<ms){try{if(fn())return true}catch(e){}await new Promise(r=>setTimeout(r,50));}return false};const R=__R();R.hum.x=400;R.hum.y=150;R.hum.vx=0;R.hum.vy=0;R.st.timer=80;return 'tp top sidewalk x400 y150 state '+R.st.state})()
+down:KeyW
+wait:1500
+eval:(()=>{const R=__R();return 'W at x400 (no door): y '+R.hum.y.toFixed(1)+' state '+R.st.state})()
+down:KeyD
+eval:(async()=>{const ok=await __until(()=>__game.scenes.currentId!=='S09_Road'||__R().st.state==='door',15000);const R=__R();return 'W+D along facade → door '+ok+' scene '+__game.scenes.currentId+(R?' x '+R.hum.x.toFixed(1)+' y '+R.hum.y.toFixed(1)+' state '+R.st.state:'')})()
+up:KeyD
+up:KeyW
+shot:/data/work/shots/s09door.png
+eval:(async()=>{const ok=await __until(()=>__game.scenes.currentId==='C_LabEntry',8000);return 'C_LabEntry '+ok})()

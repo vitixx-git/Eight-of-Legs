@@ -1,0 +1,10 @@
+wait:4500
+eval:(()=>{const g=__game,s=g.scenes.current;s.debugSeek(2.2);return s.debugInfo()})()
+wait:300
+shot:/data/work/shots/cl_7.png
+eval:(()=>{const g=__game,s=g.scenes.current;s.debugSeek(3.2);const h=s._dbg.human.group;const v=new h.position.constructor(0,0,1).applyQuaternion(h.quaternion);return s.debugInfo()+' rotY '+h.rotation.y.toFixed(2)+' fwd '+v.toArray().map(x=>x.toFixed(2))})()
+wait:300
+shot:/data/work/shots/cl_8.png
+eval:(()=>{const g=__game,s=g.scenes.current;s.debugSeek(8.9);return s.debugInfo()})()
+wait:300
+shot:/data/work/shots/cl_9.png

@@ -1,0 +1,36 @@
+wait:6000
+eval:(()=>{const g=window.__game;window.__S=()=>g.scenes.current&&g.scenes.current._state;window.__info=(tag)=>{const s=__S();if(!s)return tag+': no state, scene '+g.scenes.currentId;return tag+': scene '+g.scenes.currentId+' surf '+s.surf+' mode '+s.mode+' pos '+s.pos.x.toFixed(1)+','+s.pos.y.toFixed(1)+','+s.pos.z.toFixed(1)+' wake '+s.wake.toFixed(0)+' obj '+[0,1,2].map(i=>g.objectives.isDone(i)?1:0).join('')+' chk '+g.scenes.checkpoint+' defeats '+window.__defeats};window.__until=async(fn,ms)=>{const t0=performance.now();while(performance.now()-t0<ms){try{if(fn())return true}catch(e){}await new Promise(r=>setTimeout(r,50));}return false};window.__maxWake=0;window.__defeats=0;let seen=false;setInterval(()=>{const s=__S();if(s)window.__maxWake=Math.max(window.__maxWake,s.wake);const d=!!document.querySelector('.defeat');if(d&&!seen)window.__defeats++;seen=d},100);return __info('start, god off')})()
+eval:(async()=>{const ok=await __until(()=>__S().mode==='play'&&__S().surf==='F',20000);__S().toss.next=1e9;return __info('descended '+ok+' (tosses off)')})()
+down:KeyA
+eval:(async()=>{const ok=await __until(()=>__S().pos.z>=146,15000);return __info('A: z>=146 '+ok)})()
+up:KeyA
+down:KeyW
+eval:(async()=>{const ok=await __until(()=>__S().pos.x<=1,30000);return __info('W: x<=1 '+ok)})()
+up:KeyW
+down:KeyA
+eval:(async()=>{const ok=await __until(()=>/паутин/.test(document.querySelector('[class*=prompt]')?.textContent||''),15000);return __info('A: W1 prompt '+ok)+' prompt='+(document.querySelector('[class*=prompt]')?.textContent||'')})()
+up:KeyA
+shot:/data/work/shots/s02full_1_w1.png
+press:KeyE
+eval:(async()=>{const ok=await __until(()=>__S().surf==='B'&&__S().mode==='play',15000);return __info('W1 -> B '+ok)})()
+wait:800
+down:KeyW
+down:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().pos.x>=40,25000);return __info('x>=40 '+ok)})()
+up:KeyD
+eval:(async()=>{const ok=await __until(()=>__S().surf==='T'&&__S().mode==='play',30000);return __info('on T '+ok)})()
+up:KeyW
+shot:/data/work/shots/s02full_2_T.png
+eval:(async()=>{const ok=await __until(()=>__S().wake<5,30000);return __info('rested '+ok)})()
+down:ShiftLeft
+down:KeyW
+eval:(async()=>{const ok=await __until(()=>__S().surf==='P'&&__S().mode==='play',15000);return __info('on P (Shift) '+ok)})()
+up:KeyW
+wait:300
+down:KeyW
+eval:(async()=>{const ok=await __until(()=>/проникнуть/.test(document.querySelector('[class*=prompt]')?.textContent||'')||__game.scenes.currentId!=='S02_Path',40000);return __info('ear prompt '+ok)+' maxWake '+__maxWake.toFixed(0)})()
+up:KeyW
+up:ShiftLeft
+shot:/data/work/shots/s02full_3_ear.png
+press:KeyE
+eval:(async()=>{const ok=await __until(()=>__game.scenes.currentId==='S03_Meet',20000);return 'S03 reached '+ok+' scene '+__game.scenes.currentId+' maxWake '+__maxWake.toFixed(0)+' defeats '+__defeats})()

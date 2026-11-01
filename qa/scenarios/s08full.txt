@@ -1,0 +1,27 @@
+wait:3500
+eval:import('/tools/autopilot.js').then(m=>m.install([{x:-150,z:130},{x:90,z:135},{x:200,z:135},{x:262,z:100},{wait:3.4},{x:214,z:66},{use:true},{wait:1},{x:230,z:75},{x:380,z:62},{x:402,z:40},{x:402,z:-86},{use:true},{wait:1},{use:true},{wait:1},{x:402,z:55},{x:226,z:58},{x:226,z:-50},{x:110,z:-50,stairs:true},{th:500,r:50},{th:430,r:50},{th:400,r:90},{th:350,r:95},{th:318,r:95},{th:314,r:62},{th:285,r:62},{th:200,r:80},{th:100,r:80},{th:20,r:80},{th:4,r:112},{x:-150,z:-50,floor:0},{x:-300,z:-90},{x:-392,z:-110},{use:true},{wait:3}]))
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_1.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_2.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_3.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_4.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_5.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_6.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err,JSON.stringify(window.__ap.trace.slice(-6))],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_7.png
+wait:15000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err,JSON.stringify(window.__ap.trace.slice(-6))],calls:g.renderer.info.render.calls}})()
+shot:/data/work/shots/s8f_8.png
+log

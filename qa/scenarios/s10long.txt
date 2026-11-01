@@ -1,0 +1,19 @@
+wait:5000
+eval:import('/tools/autopilot.js').then(m=>m.install([{x:-190,z:85,tol:8},{use:true},{wait:1.4},{x:-36,z:48,tol:6},{use:true},{wait:1.0},{careful:true},{x:100,z:48,tol:10},{x:185,z:-20,tol:8},{x:200,z:-20,tol:5},{use:true},{wait:3}]))
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+wait:8000
+eval:(()=>{const g=window.__game,s=g.scenes.current;return {id:g.scenes.currentId,info:s.debugInfo&&s.debugInfo(),ap:window.__ap&&[window.__ap.i,window.__ap.err]}})()
+log

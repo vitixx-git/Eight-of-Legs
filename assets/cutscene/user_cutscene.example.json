@@ -1,0 +1,10 @@
+{
+  "_readme": "Образец. Переименуйте в user_cutscene.json. type: video | frames | timeline.",
+  "type": "video",
+  "src": "my_cutscene.mp4",
+  "subtitles": [
+    { "t": 0.5, "dur": 3.0, "text": "Город спит.", "who": "" },
+    { "t": 4.0, "dur": 3.5, "text": "Но в Лаборатории №3 горит свет…", "who": "" }
+  ],
+  "keepGameMusic": false
+}

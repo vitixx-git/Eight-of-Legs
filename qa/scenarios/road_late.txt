@@ -1,0 +1,12 @@
+wait:2000
+eval:(()=>{const s=window.__game.scenes.current._state; s.st.timer=0.6; return 'set'})()
+wait:1500
+eval:document.querySelector('.defeat')?.innerText
+shot:/data/work/shots/road_late.png
+wait:1500
+press:Space
+wait:1200
+eval:(()=>{const s=window.__game.scenes.current._state; return [s.st.timer.toFixed(1), s.st.state, s.hum.y, window.__game.scenes.currentId, document.querySelector('.timer')?.innerText]})()
+eval:(()=>{window.__game.scenes.current.debugWin(); return 'win'})()
+wait:2500
+eval:[window.__game.scenes.currentId, document.querySelector('.modal-back')?.innerText?.slice(0,200)]
